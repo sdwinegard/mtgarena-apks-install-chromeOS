@@ -1,12 +1,12 @@
 # mtgarena-apks-install-chromeOS
-How to manually install MTG Arena on an unsupported ChromeOS device without developer mode enabled
+How to manually install MTG Arena on an unsupported Android or ChromeOS device without developer mode enabled
 
 # Split-APK (APKS) Installation Process
 
 **Download latest APKs**  
 [https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)  
 
-Let’s assume the latest APKs is named Magic_com,wizards,mtga_2026,55,20,5532.apks an you downloaded it to the Downloads folder on your Chromebook
+Let’s assume the latest APKs is named Magic_com,wizards,mtga_2026,55,20,5532.apks an you downloaded it to the Downloads folder on your device
 
 Right click on this files and rename it by changing the extension of the file from .apks to .zip 
 
