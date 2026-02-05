@@ -6,15 +6,15 @@ How to manually install MTG Arena on an unsupported Android or ChromeOS device w
 **Download latest APKs**  
 [https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)  
 
-Let’s assume the latest APKs is named Magic_com,wizards,mtga_2026,55,20,5532.apks an you downloaded it to the Downloads folder on your device
+Let’s assume the latest APKs is named Magic_com,wizards,mtga_2026,55,20,5532.apks an you downloaded it to the Download folder on your device
 
-Right click on this files and rename it by changing the extension of the file from .apks to .zip 
+Right-click on this file and rename it by changing the extension of the file from .apks to .zip 
 
-Right click on the zip file and extract all
+Right-click on the zip file and extract all
 
 All of the files within will be extracted into:
 
-`Downloads/Magic_com,wizards,mtga_2026,55,20,5532`
+`Download/Magic_com,wizards,mtga_2026,55,20,5532`
 
 Open a Linux shell:
 `$ adb devices`
@@ -22,8 +22,8 @@ Open a Linux shell:
 Enter the ADB shell:
 `$ adb shell`
 
-From the ADB shell, change into the extracted download folder above to calculate the APK files sizes:
-`$ cd /sdcard/Downloads/Magic_com,wizards,mtga_2026,55,20,5532`
+From the ADB shell, change into the extracted download folder above to calculate the APK file sizes:
+`$ cd /sdcard/Download/Magic_com,wizards,mtga_2026,55,20,5532`
 `$ ls -l *.apk`
 
 `-rwxrwx--- 1 u0_a60 external_storage 36529517 2026-01-30 11:48 base.apk`
@@ -55,6 +55,6 @@ Commit the staged files for installation:
 `$ pm install-commit 1778358657`
 `Success`
 
-Launch Arena on your Chromebook. It will Download new files, updates, etc. and will likely ask you to login again. 
+Launch Arena on your Chromebook. It will download new files, updates, etc., and will likely ask you to log in again. 
 
-You can delete the Zip file and the extracted files from your Download folder.
+You can delete the zip file and the extracted files from your Download folder.
