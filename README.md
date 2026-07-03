@@ -6,7 +6,7 @@ How to manually install MTG Arena on an unsupported Android or ChromeOS device w
 **Download latest APKs**  
 [https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)  
 
-Let’s assume the latest APKs is named Magic_com,wizards,mtga_2026,55,20,5532.apks an you downloaded it to the Download folder on your device
+Let’s assume the latest APKs is named magic.apks and you downloaded it to the Download folder on your device
 
 Right-click on this file and rename it by changing the extension of the file from .apks to .zip 
 
@@ -14,7 +14,7 @@ Right-click on the zip file and extract all
 
 All of the files within will be extracted into:
 
-`Download/Magic_com,wizards,mtga_2026,55,20,5532`
+`Download/magic`
 
 Open a Linux shell:
 `$ adb devices`
@@ -23,7 +23,7 @@ Enter the ADB shell:
 `$ adb shell`
 
 From the ADB shell, change into the extracted download folder above to calculate the APK file sizes:
-`$ cd /sdcard/Download/Magic_com,wizards,mtga_2026,55,20,5532`
+`$ cd /sdcard/Download/magic`
 `$ ls -l *.apk`
 
 `-rwxrwx--- 1 u0_a60 external_storage 36529517 2026-01-30 11:48 base.apk`
