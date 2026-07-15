@@ -1,14 +1,42 @@
 # mtgarena-apks-install-chromeOS
 How to manually install MTG Arena on an unsupported Android or ChromeOS device without developer mode enabled
 
+# ADB Shell Script Manual Split-APK (APKS) Installation Process
+
+**Download the latest apks file to the Download folder**
+[https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)
+
+**Download the latest install_mtga.sh to the Download folder**
+[https://github.com/sdwinegard/mtgarena-apks-install-chromeOS](https://github.com/sdwinegard/mtgarena-apks-install-chromeOS)
+
+Right-click on the .apks file and rename it 'magic' and change the extension of the file from .apks to .zip
+
+Right-click on the magic.zip file and extract all
+
+All of the .apks files within will be extracted into:
+`Download/magic`
+
+Open a Linux shell: 
+`$ adb devices`
+
+Copy the install script to an executable area in ADB: 
+`$ adb push /Download/install_mtga.sh /data/local/tmp`
+
+Enter the ADB shell: 
+`$ adb shell`
+
+From the ADB shell, change into the tmp folder containing the install script: 
+`$ cd /data/local/tmp`
+
+Execute the script:
+`$ ./install-mtga.sh`
+
 # Split-APK (APKS) Installation Process
 
-**Download latest APKs**  
-[https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)  
+**Download the latest .apks file to the Download folder**
+[https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)
 
-Let’s assume the latest APKs is named magic.apks and you downloaded it to the Download folder on your device
-
-Right-click on this file and rename it by changing the extension of the file from .apks to .zip 
+Right-click on the .apks file and rename it 'magic' and change the extension of the file from .apks to .zip
 
 Right-click on the zip file and extract all
 
