@@ -29,7 +29,7 @@ From the ADB shell, change into the tmp folder containing the install script: 
 `$ cd /data/local/tmp`
 
 Execute the script:
-`$ ./install-mtga.sh`
+`$ sh install-mtga.sh`
 
 # Split-APK (APKS) Installation Process
 
