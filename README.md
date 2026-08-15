@@ -11,22 +11,20 @@ How to manually install MTG Arena on an unsupported Android or ChromeOS device w
 
 Right-click on the .apks file and rename it 'magic' and change the extension of the file from .apks to .zip
 
-Right-click on the magic.zip file and extract all
-
-All of the .apks files within will be extracted into:
-`Download/magic`
-
 Open a Linux shell: 
 `$ adb devices`
 
 Copy the install script to an executable area in ADB: 
-`$ adb push /Download/install_mtga.sh /data/local/tmp`
+`$ adb push /mnt/chromeos/MyFiles/Downloads/install_mtga.sh /data/local/tmp`
 
 Enter the ADB shell: 
 `$ adb shell`
 
 From the ADB shell, change into the tmp folder containing the install script: 
 `$ cd /data/local/tmp`
+
+Apply execute permissions on the install script:
+`$ chmod +x install-mtga.sh`
 
 Execute the script:
 `$ sh install-mtga.sh`
