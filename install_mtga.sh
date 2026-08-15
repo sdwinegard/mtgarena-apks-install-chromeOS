@@ -4,6 +4,7 @@
 # CONFIGURATION
 # --- DOWNLOAD DIRECTORY ---
 DOWNLOAD_DIR="/sdcard/Download/magic"
+SOURCE_FILE="/sdcard/Download/magic.zip"
 # ========================================================
 
 echo "--- Starting MTG Arena Installation Automation ---"
@@ -14,8 +15,12 @@ APK_DATA=()  # Indexed array to store {path: size} pairs
 INDEX=0      # Loop counter for staging index (0, 1, 2...)
 FOUND_COUNT=0 # Counter for how many APKs were actually processed
 
-# Step 1: Calculate total size and list files (Revised Portable Method)
-echo "[STEP 1/3] Calculating sizes and finding APKs in $DOWNLOAD_DIR..."
+# Step 1: Unzip zip file
+echo "[STEP 1/6] Unzipping source file APKs to $DOWNLOAD_DIR..."
+unzip -d "$DOWNLOAD_DIR" "$SOURCE_FILE"
+
+# Step 2: Calculate total size and list files (Revised Portable Method)
+echo "[STEP 2/6] Calculating sizes and finding APKs in $DOWNLOAD_DIR..."
 
 # Initialize an array to hold the paths found by globbing.
 # Using a simple loop structure for maximum portability.
@@ -43,8 +48,8 @@ echo "Total APK file count found: ${FOUND_COUNT}"
 echo "Calculated total package size: $TOTAL_SIZE bytes."
 
 
-# Step 2: Create Installation Session (pm install-create)
-echo "[STEP 2/3] Creating new installation session with $TOTAL_SIZE bytes..."
+# Step 3: Create Installation Session (pm install-create)
+echo "[STEP 3/6] Creating new installation session with $TOTAL_SIZE bytes..."
 
 # Execute the create command and capture output to find the Session ID
 CREATE_OUTPUT=$(pm install-create -S "$TOTAL_SIZE")
@@ -59,8 +64,8 @@ fi
 echo "Success: Created install session ID: $SESSION_ID"
 
 
-# Step 3: Stage all APK files and commit (pm install-write & pm install-commit)
-echo "[STEP 3/3] Staging all APK components to session $SESSION_ID..."
+# Step 4: Stage all APK files and commit (pm install-write & pm install-commit)
+echo "[STEP 4/6] Staging all APK components to session $SESSION_ID..."
 
 CURRENT_INDEX=0 # Reset the index for staging
 for data_entry in "${APK_DATA[@]}"; do
@@ -76,8 +81,10 @@ for data_entry in "${APK_DATA[@]}"; do
 done
 
 
-echo "[FINAL STEP] Committing all staged files for installation..."
+echo "[STEP 5/6] Committing all staged files for installation..."
 pm install-commit "$SESSION_ID"
 
-echo "--- Installation Process Complete ---"
+echo "[STEP 6/6] Cleanup and remove $DOWNLOAD_DIR"
+rm -fr "$DOWNLOAD_DIR"
 
+echo "--- Installation Process Complete ---"
