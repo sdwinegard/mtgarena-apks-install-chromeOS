@@ -1,7 +1,7 @@
 # mtgarena-apks-install-chromeOS
 How to manually install MTG Arena on an unsupported Android or ChromeOS device without developer mode enabled
 
-# ADB Shell Script Manual Split-APK (APKS) Installation Process
+# ADB Shell Script Split-APK (APKS) Installation Process
 
 **Download the latest apks file to the Download folder**
 [https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)
@@ -29,7 +29,7 @@ Apply execute permissions on the install script:
 Execute the script:
 `$ sh install-mtga.sh`
 
-# Split-APK (APKS) Installation Process
+# Manual Split-APK (APKS) Installation Process
 
 **Download the latest .apks file to the Download folder**
 [https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena](https://rwilco12.com/downloads.php?dir=Files/Apps/Magic%20The%20Gathering%20Arena)
