@@ -1,5 +1,4 @@
 #!/system/bin/sh
-
 # ========================================================
 # CONFIGURATION
 # --- DOWNLOAD DIRECTORY ---
@@ -47,7 +46,6 @@ fi
 echo "Total APK file count found: ${FOUND_COUNT}"
 echo "Calculated total package size: $TOTAL_SIZE bytes."
 
-
 # Step 3: Create Installation Session (pm install-create)
 echo "[STEP 3/6] Creating new installation session with $TOTAL_SIZE bytes..."
 
@@ -62,7 +60,6 @@ if [ -z "$SESSION_ID" ]; then
 fi
 
 echo "Success: Created install session ID: $SESSION_ID"
-
 
 # Step 4: Stage all APK files and commit (pm install-write & pm install-commit)
 echo "[STEP 4/6] Staging all APK components to session $SESSION_ID..."
@@ -79,7 +76,6 @@ for data_entry in "${APK_DATA[@]}"; do
 
     CURRENT_INDEX=$((CURRENT_INDEX + 1))
 done
-
 
 echo "[STEP 5/6] Committing all staged files for installation..."
 pm install-commit "$SESSION_ID"
